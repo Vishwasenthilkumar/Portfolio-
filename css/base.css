@@ -1,0 +1,98 @@
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0b0f14;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Page wrapper */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background video */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 15, 20, 0.75);
+  z-index: 1;
+}
+
+/* Main container */
+.container {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  /* reduced top spacing */
+  margin: 24px auto 0 120px;   /* reduced top */
+  padding: 20px 28px 0;
+}
+
+
+/* Typography */
+h1 { font-size: 42px; margin-bottom: 8px; }
+h2 { font-size: 22px; color: #6cf2c2; margin-bottom: 16px; }
+h3 { font-size: 18px; margin-bottom: 6px; }
+
+p {
+  max-width: 720px;
+  color: #b0b8c1;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #6cf2c2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Buttons */
+.buttons a {
+  display: inline-block;
+  padding: 12px 26px;
+  margin-right: 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background: #6cf2c2;
+  color: #000;
+}
+
+.secondary {
+  border: 2px solid #6cf2c2;
+  color: #6cf2c2;
+}

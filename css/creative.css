@@ -1,0 +1,28 @@
+.section {
+  margin-top: 36px;
+}
+
+.intro-text {
+  max-width: 720px;
+  color: #b0b8c1;
+  line-height: 1.7;
+}
+
+.card {
+  background: #141a22;
+  padding: 22px 24px;
+  border-radius: 14px;
+  border-left: 3px solid #6cf2c2;
+  margin-top: 18px;
+}
+
+.pill-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #6cf2c2;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
