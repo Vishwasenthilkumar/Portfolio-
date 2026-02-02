@@ -1,10 +1,18 @@
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
+  object-fit: cover;         /* keeps image proportional */
+  object-position: center;   /* centers the face */
   border: 3px solid #6cf2c2;
   box-shadow: 0 0 20px rgba(108, 242, 194, 0.4);
   margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 135px;
+    height: 135px;
+  }
 }
 /* ===============================
    FOOTER (STICKS TO BOTTOM)
