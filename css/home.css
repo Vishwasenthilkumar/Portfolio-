@@ -62,3 +62,45 @@
   font-size: 13px;
   color: #8a929b;
 }
+/* ===============================
+   MOBILE LAYOUT FIX (HOME PAGE)
+================================ */
+@media (max-width: 768px) {
+
+  .container {
+    margin: 16px auto 0;
+    padding: 12px 16px;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+  }
+}
+@media (max-width: 768px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
