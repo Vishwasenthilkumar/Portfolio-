@@ -1,28 +1,255 @@
-.profile-pic {
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  object-fit: cover;         /* keeps image proportional */
-  object-position: center;   /* centers the face */
-  border: 3px solid #6cf2c2;
-  box-shadow: 0 0 20px rgba(108, 242, 194, 0.4);
-  margin-bottom: 20px;
+.home-page {
+  height: 100vh;
+  overflow: hidden;
 }
-@media (max-width: 768px) {
-  .profile-pic {
-    width: 135px;
-    height: 135px;
+
+@keyframes home-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+@keyframes home-line {
+  from { width: 0; }
+  to { width: 28px; }
+}
+
+.hero-copy,
+.profile-panel,
+.footer {
+  animation: home-rise 0.75s ease both;
+}
+
+.profile-panel { animation-delay: 0.16s; }
+.footer { animation-delay: 0.3s; }
+
+.home-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  align-items: center;
+  gap: clamp(48px, 9vw, 150px);
+  min-height: 0;
+  margin-top: 0;
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.hero-copy {
+  max-width: 700px;
+}
+
+.eyebrow,
+.profile-label,
+.panel-topline,
+.focus-list {
+  font-family: "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6cf2c2;
+  margin-bottom: 24px;
+}
+
+.eyebrow span {
+  width: 28px;
+  height: 1px;
+  background: #6cf2c2;
+  animation: home-line 0.8s ease 0.35s both;
+}
+
+.home-container h1 {
+  max-width: 760px;
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 6.4vw, 88px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin-bottom: 22px;
+}
+
+.home-container h1 em {
+  color: #6cf2c2;
+  font-style: normal;
+  text-shadow: 0 0 24px rgba(108, 242, 194, 0.14);
+}
+
+.home-container h2 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 18px;
+}
+
+.intro-copy {
+  max-width: 540px;
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.buttons a {
+  margin: 0;
+  padding: 14px 19px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(108, 242, 194, 0.18);
+}
+
+.buttons a span,
+.panel-link span {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 17px;
+}
+
+.focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 58px;
+  color: #8a929b;
+}
+
+.focus-list span::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 8px 2px 0;
+  border-radius: 50%;
+  background: #6cf2c2;
+  animation: focus-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes focus-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.profile-panel {
+  justify-self: end;
+  width: min(100%, 315px);
+  padding: 14px;
+  border: 1px solid rgba(108, 242, 194, 0.28);
+  background: rgba(11, 15, 20, 0.68);
+  box-shadow: 18px 18px 0 rgba(108, 242, 194, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-panel:hover {
+  transform: translateY(-5px);
+  border-color: rgba(108, 242, 194, 0.55);
+  box-shadow: 18px 18px 0 rgba(108, 242, 194, 0.12), 0 18px 36px rgba(0, 0, 0, 0.22);
+}
+
+.panel-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #8a929b;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.status-dot { color: #6cf2c2; }
+.status-dot::before { content: "●"; margin-right: 5px; }
+
+.portrait-wrap {
+  position: relative;
+  margin: 12px 0 14px;
+}
+
+.profile-pic {
+  display: block;
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  object-position: 58% 35%;
+  filter: saturate(0.82);
+  border: 1px solid rgba(108, 242, 194, 0.55);
+}
+
+.portrait-mark {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 9px;
+  background: #6cf2c2;
+  color: #0b0f14;
+  font: bold 11px "Trebuchet MS", sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.profile-label { color: #6cf2c2; margin-bottom: 8px; }
+.profile-details h3 { font-family: Georgia, serif; font-size: 28px; font-weight: 400; margin-bottom: 8px; }
+.profile-details p:last-child { font-size: 14px; line-height: 1.6; }
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+}
+
+.contact-details a,
+.contact-details span {
+  color: #b0b8c1;
+  text-decoration: none;
+}
+
+.contact-details a:hover { color: #6cf2c2; }
+
+.panel-link {
+  display: block;
+  padding-top: 14px;
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.panel-link:hover { color: #6cf2c2; }
+
+.panel-link span { transition: transform 0.25s ease; }
+.panel-link:hover span { transform: translateX(5px); }
+
 /* ===============================
-   FOOTER (STICKS TO BOTTOM)
+   FOOTER
 ================================ */
 .footer {
   position: relative;
   z-index: 2;
   width: 100%;
   background: rgba(15, 20, 30, 0.9);
-  padding: 22px 0 16px;
+  padding: 14px 0 10px;
   text-align: center;
 }
 
@@ -31,12 +258,12 @@
   display: flex;
   justify-content: center;
   gap: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .footer-icons a {
-  width: 40px;
-  height: 37px;
+  width: 34px;
+  height: 32px;
   border-radius: 50%;
   background: rgba(108, 242, 194, 0.18);
   color: #6cf2c2;
@@ -57,50 +284,53 @@
   transform: translateY(-3px);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .profile-panel,
+  .footer,
+  .eyebrow span,
+  .focus-list span::before {
+    animation: none;
+    opacity: 1;
+  }
+
+  .buttons a,
+  .profile-panel,
+  .panel-link span,
+  .footer-icons a {
+    transition: none;
+  }
+}
+
 /* Footer text */
 .footer-copy {
   font-size: 13px;
   color: #8a929b;
 }
-/* ===============================
-   MOBILE LAYOUT FIX (HOME PAGE)
-================================ */
-@media (max-width: 768px) {
 
-  .container {
-    margin: 16px auto 0;
-    padding: 12px 16px;
+@media (max-width: 768px) {
+  .home-page {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .home-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
     min-height: auto;
+    margin: 16px auto 0;
+    padding: 28px 16px 56px;
   }
 
-  h1 {
-    font-size: 30px;
-    line-height: 1.2;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-}
-@media (max-width: 768px) {
-  .profile-pic {
-    width: 130px;
-    height: 130px;
-  }
-}
-@media (max-width: 768px) {
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
+  .home-container h1 { font-size: clamp(46px, 14vw, 68px); }
+  .intro-copy { font-size: 15px; }
   .buttons a {
     width: 100%;
     text-align: center;
   }
+
+  .focus-list { margin-top: 36px; line-height: 1.8; }
+  .profile-panel { justify-self: stretch; width: 100%; }
+  .profile-pic { height: auto; aspect-ratio: 1 / 0.82; }
 }
