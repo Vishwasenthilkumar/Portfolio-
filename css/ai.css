@@ -83,12 +83,13 @@
   border-top: 2px solid #6cf2c2;
   background: rgba(15, 20, 30, 0.82);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
   border-color: rgba(108, 242, 194, 0.65);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22), 0 0 18px rgba(108, 242, 194, 0.08);
 }
 
 .card-topline {
@@ -156,6 +157,15 @@
 .work-footer a {
   color: #6cf2c2;
   text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transform: none;
+    transition: none;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  }
 }
 
 @media (max-width: 768px) {
