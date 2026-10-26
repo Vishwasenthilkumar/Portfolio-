@@ -311,6 +311,7 @@
 
 .experience-section,
 .skills-section,
+.education-section,
 .achievement-section,
 .certification-section {
   display: grid;
@@ -364,6 +365,7 @@
 .section-heading h2 em { color: #6cf2c2; font-style: normal; }
 
 .experience-entry,
+.education-entry,
 .achievement-entry,
 .certification-entry {
   padding-left: 22px;
@@ -377,6 +379,7 @@
 }
 
 .experience-entry h3,
+.education-entry h3,
 .achievement-entry h3,
 .certification-entry h3 {
   margin: 12px 0 8px;
@@ -386,6 +389,7 @@
 }
 
 .experience-entry > p:not(.experience-meta, .experience-tools),
+.education-entry > p:not(.experience-meta, .experience-tools),
 .achievement-entry > p:not(.experience-meta, .experience-tools) {
   max-width: 620px;
   font-size: 14px;
@@ -605,6 +609,7 @@
 
   .experience-section,
   .skills-section,
+  .education-section,
   .achievement-section,
   .certification-section {
     grid-template-columns: 1fr;
